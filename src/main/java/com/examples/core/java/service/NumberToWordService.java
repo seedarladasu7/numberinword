@@ -19,7 +19,7 @@ public class NumberToWordService {
 			number = Long.valueOf(strNum);
 			return numberToEnglishWords.convert(number);
 		} catch (NumberFormatException nfe) {
-			LOGGER.error("Given String {} is not a number", strNum);
+			LOGGER.error("Given String {} is not a number, {}", strNum, nfe.getMessage());
 		} catch (ArithmeticException ae) {
 			LOGGER.error("ArithmeticException while performing arithmetic operation(s) {}", ae.getMessage());
 		} catch (Exception ex) {
